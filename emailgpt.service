@@ -1,0 +1,13 @@
+[Unit]
+Description=Email GPT
+After=network.target
+
+[Service]
+User=ubuntu
+WorkingDirectory=/home/ubuntu/EmailsGPT
+ExecStart=/bin/bash -c "make sync && make start"
+Restart=on-failure
+RestartSec=300  # 5 minutes
+
+[Install]
+WantedBy=multi-user.target
