@@ -20,13 +20,17 @@ import (
 
 func main() {
 	// Initialize the processor
-	duration := time.Duration(3 * time.Hour)
+	duration := time.Duration(20 * time.Minute)
 
 	// Define the criteria for processing
 	criteria := []models.Criteria{
 		{
-			Name:        "Social",
-			Description: "Linkedin invitations",
+			Name:        "Event Announcements",
+			Description: "Any kind of announcement, tour, event, concert, or festival.",
+		},
+		{
+			Name:        "Discounts",
+			Description: "Discounts mails on ticket sales, drop alerts on tickets.",
 		},
 	}
 

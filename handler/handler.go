@@ -75,6 +75,7 @@ func (h *CronHandler) Process(ctx context.Context) error {
 
 func (h *CronHandler) Start(ctx context.Context, shutdownChannel chan struct{}) {
 	logTag := "Function: CronHandler :: Start :: "
+	log.Println(logTag + "Service started successfully")
 	ticker := time.NewTicker(h.duration)
 	defer ticker.Stop()
 

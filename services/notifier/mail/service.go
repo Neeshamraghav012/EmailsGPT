@@ -50,13 +50,5 @@ func (s *MailService) buildMailMessage(response models.SummarizerResponse) strin
 		message += "<hr/>"
 	}
 
-	for _, email := range response.Emails {
-		message += "Subject: " + email.Subject + "<br/>"
-		message += "From: " + email.From + "<br/>"
-		message += "Summary: " + email.Summary + "<br/>"
-		message += "Link: " + email.Link + "`<br/><br/>"
-		message += "<hr/>"
-	}
-
 	return message
 }
