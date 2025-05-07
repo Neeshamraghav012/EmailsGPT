@@ -3,4 +3,4 @@ start:
 
 sync:
 	git stash
-	git pull origin main
+	git pull origin master
