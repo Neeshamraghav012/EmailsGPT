@@ -87,6 +87,11 @@ func (c *Client) FetchMailsSince(sinceDate time.Time) ([]Mail, error) {
 		if len(msg.Envelope.From) > 0 {
 			from = msg.Envelope.From[0].Address()
 		}
+
+		if from == c.Username {
+			continue // Skip emails sent by the user
+		}
+
 		subject := msg.Envelope.Subject
 		formattedMessageID := msg.Envelope.MessageId[1 : len(msg.Envelope.MessageId)-1]
 		link := fmt.Sprintf("https://mail.google.com/mail/?authuser=%s#search/rfc822msgid:%s", c.Username, formattedMessageID)
